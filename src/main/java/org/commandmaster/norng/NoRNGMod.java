@@ -1,24 +1,18 @@
-package net.fabricmc.example;
+package org.commandmaster.norng;
 
 import net.devtech.grossfabrichacks.instrumentation.InstrumentationApi;
 import net.devtech.grossfabrichacks.unsafe.UnsafeUtil;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.launch.common.FabricLauncherBase;
-import net.minecraft.entity.Entity;
 
 import static org.objectweb.asm.Opcodes.*;
 
-import net.minecraft.loot.function.ExplorationMapLootFunction;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.MethodNode;
 
 import java.io.IOException;
-import java.lang.instrument.Instrumentation;
-import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Random;
-import java.util.UUID;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class ExampleMod implements ModInitializer {
     @Override
@@ -32,9 +26,9 @@ public class ExampleMod implements ModInitializer {
             e.printStackTrace();
         }
         try {
-            byte[] source = FabricLauncherBase.getLauncher().getClassByteArray("net/fabricmc/example/Endpoint", false);
+            byte[] source = FabricLauncherBase.getLauncher().getClassByteArray("org/commandmaster/norng/Endpoint", false);
             System.out.println(Arrays.toString(source));
-            UnsafeUtil.defineClass("net/fabricmc/example/Endpoint", source, Random.class.getClassLoader());
+            UnsafeUtil.defineClass("org/commandmaster/norng/Endpoint", source, Random.class.getClassLoader());
         } catch (IOException e) {
             e.printStackTrace();
         }
