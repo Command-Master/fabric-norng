@@ -14,17 +14,9 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
-public class ExampleMod implements ModInitializer {
+public class NoRNGMod implements ModInitializer {
     @Override
     public void onInitialize() {
-        // This code runs as soon as Minecraft is in a mod-load-ready state.
-        // However, some things (like resources) may still be uninitialized.
-        // Proceed with mild caution.
-        try {
-            Class<?> unsafe = Class.forName("sun.misc.Unsafe");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
         try {
             byte[] source = FabricLauncherBase.getLauncher().getClassByteArray("org/commandmaster/norng/Endpoint", false);
             System.out.println(Arrays.toString(source));
@@ -50,7 +42,7 @@ public class ExampleMod implements ModInitializer {
                 }
             }
         });
-        System.out.println(Type.getInternalName(ExampleMod.class));
+        System.out.println(Type.getInternalName(NoRNGMod.class));
         System.out.println("Hello Fabric world!");
     }
 }

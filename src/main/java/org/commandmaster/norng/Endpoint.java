@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package org.commandmaster.norng;
 
 import java.lang.reflect.Field;
 import java.util.Random;

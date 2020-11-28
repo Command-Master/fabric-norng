@@ -1,9 +1,8 @@
-# Fabric Example Mod
+# Fabric - NoRNG
 
-## Setup
+## Installation:
+1. Download fabric
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+2. Download no-rng-1.0.0.jar
 
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+3. Put no-rng-1.0.0.jar in your mods foldar.
